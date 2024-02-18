@@ -188,8 +188,11 @@
             height: 100%;
         }
 
+        }
+
         footer {
             width: 100%;
+            height: 200px;
             position: relative;
             top: 150px;
             background-color: #333;
@@ -209,19 +212,21 @@
         }
 
         .footer-section {
-            flex: 1;
             margin: 0 10px;
             max-width: 300px;
+            flex: 1;
         }
 
         .footer-section ul {
             list-style: none;
             padding: 0;
             margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
         }
 
         .footer-section li {
-            margin-bottom: 5px;
+            margin-bottom: 10px; /* Add margin between the list items */
         }
 
         .footer-section input[type="text"],
@@ -266,9 +271,9 @@
             text-decoration: underline;
         }
 
-        .copy-right {
+        .copy-right{
             font-size: 20px;
-            margin-top: 20px;
+            margin-top: 10px;
             margin-left: 190px;
         }
 
@@ -292,7 +297,6 @@
       <li class="dropdown li" >
         <a href="nsi.html" class="active">More</a>
         <div class="dropdown-content">
-          <a href="motivation.html">Motivation</a>
           <a href="nsi.html">Self-Improvement</a>
           <a href="recommendPBL.html">Recommend</a>
           <a href="credit.html">Credits</a>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Website</title>
+    <style>
+        /* Footer styles */
+        body {
+            margin: 0;
+            padding-bottom: 120px; /* Adjust to the height of your footer */
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .footer-left {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .footer-left a {
+            color: white;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+
+        .footer-right {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .social-icons {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .social-icon {
+            margin-right: 10px;
+            height: 25px; 
+        }
+
+        .copyright {
+            margin-top: 20px;
+            color: white;
+        }
+
+        /* Responsive styles */
+        @media only screen and (max-width: 600px) {
+            .footer-left {
+                text-align: center;
+            }
+
+            .footer-left a {
+                margin-right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-left">
+            <img src="njs.png" alt="NJS Logo">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+        <form action="#" method="post">
+            <input type="text" name="message" placeholder="Your message">
+            <input type="submit" value="Submit">
+        </form>
+        <div class="footer-right">
+            <div class="social-icons">
+                <a href="#"><img src="https://via.placeholder.com/25" alt="Discord" class="social-icon"></a>
+                <a href="#"><img src="https://via.placeholder.com/25" alt="Twitter" class="social-icon"></a>
+                <a href="#"><img src="https://via.placeholder.com/25" alt="Facebook" class="social-icon"></a>
+            </div>
+        </div>
+    </div>
+    <p class="copyright">&copy; 2024 y7 Helio NJS. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

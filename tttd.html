@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time-table and To-do List</title>
+    <style>
+        body {
+            font-family: Georgia, serif;
+            background: #edf2f4;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        .time-table, .to-do-list {
+            flex: 1;
+            margin-right: 20px;
+            padding: 20px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th, table td {
+            padding: 8px;
+            border-bottom: 1px solid black;
+        }
+
+        table th {
+            text-align: left;
+        }
+
+        .to-do-list ul {
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .to-do-list li {
+            margin-bottom: 10px;
+        }
+
+        .time-table .additional-rows {
+            display: none;
+        }
+
+        .time-table .additional-rows {
+            display: table-row-group;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #2B2D42;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        .back-button:hover {
+            background-color: #1D1F2A;
+        }
+    </style>
+</head>
+<body>
+    <a href="nsi.html" class="back-button">Go Back</a>
+    <div class="container">
+        <div class="time-table">
+            <h2>Time-table</h2>
+            <label for="date">Date:</label>
+            <input type="date" id="date">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Activity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="time"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr class="additional-rows">
+                        <td><input type="time"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="to-do-list">
+            <h2>To-do List</h2>
+            <form>
+                <input type="date" id="todo-date">
+                <input type="text" id="todo-task" placeholder="Enter task">
+                <input type="submit" value="Add Task">
+            </form>
+            <ul id="todo-list">
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+
+
+

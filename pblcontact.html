@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact Us</title>
+    <link rel="icon" type="image/png" href="njs.png">
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: #edf2f4;
+            font-family: serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 10px 20px;
+        }
+
+        .logo {
+            width: 6%;
+            height: auto;
+        }
+
+        nav {
+            text-align: left;
+            margin-left: 30px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            display: inline-block;
+            font-size: 110%;
+            color: #8C9FAE;
+            padding: 16px 16px;
+        }
+
+        li a {
+            color: #8C9FAE;
+            text-decoration: none;
+        }
+
+        .active {
+            background-color: #2B2D42;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #2B2D42;
+            text-decoration: underline;
+        }
+
+        li::after {
+            content: "|";
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .dropdown {
+            position: relative;
+            margin-right: 40px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #8C9FAE;
+            min-width: 160px;
+            z-index: 1;
+            left: 0;
+            top: 100%;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .picture-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .picture-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            width: 100%;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .homepage {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .learnmore a {
+            background: #2B2D42;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .learnmore a:hover {
+            opacity: 0.8;
+        }
+
+        /* form */
+      .p {
+    width: 90px;
+    top: 0;
+}
+
+.divhome {
+    width: 100%;
+    max-width: 1535px;
+    height: 200px;
+    background-color: #134074;
+    animation-name: example;
+    animation-duration: 4s;
+    font-family: serif;
+    text-align: center;
+    font-size: 10px;
+    padding-top: 5%; 
+}
+
+.paragraph {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 25px;
+}
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2%;
+    padding: 2%; 
+}
+
+.form img {
+    width: 40%;
+    height: auto;
+    float: left;
+    margin: auto;
+}
+
+.form form {
+    width: 100%; 
+    max-width: 500px; 
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.form form label {
+    margin: auto;
+}
+
+.form form input[type="text"],
+.form form input[type="email"],
+.form form textarea {
+    padding: 2%; 
+    font-size: 16px;
+    margin-bottom: 2%; 
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    margin: auto;
+}
+
+.form form input[type="submit"] {
+    padding: 2% 5%; 
+    background-color: #2B2D42;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: auto;
+}
+
+form input[type=submit]:hover {
+    background-color: #8C9FAE;
+}
+
+@media screen and (max-width: 768px) {
+    .form img {
+        width: 100%;
+        margin-bottom: 5%;
+    }
+}
+
+</style>
+<style type="text/css">
+        body {height: 100%;
+                margin: 0;
+                font-family: serif;
+
+}
+   footer {
+            width: 100%;
+            bottom: 0;
+            background-color: #333;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+                  .footer-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                align-items: flex-start;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .footer-section {
+                margin: 0 10px;
+                max-width: 300px;
+                flex: 1;
+            }
+
+            .footer-section ul {
+                list-style: none;
+                padding: 0;
+                margin-bottom: 20px;
+                display: flex;
+                justify-content: center;
+            }
+
+            .footer-section li {
+                margin: 0 10px; 
+            }
+
+                    .footer-section li {
+                        margin-bottom: 5px;
+                    }
+
+        .footer-section input[type="text"],
+        .footer-section input[type="submit"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        .social-icons {
+            margin-bottom: 20px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .social-icons img {
+            width: 30px;
+            margin-right: 10px;
+        }
+
+        .social-icons a:hover {
+            color: #ccc;
+        }
+
+        .navigation ul {
+            padding-left: 0;
+            text-align: center;
+        }
+
+        .navigation li {
+            margin-bottom: 5px;
+        }
+
+        .navigation a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .navigation a:hover {
+            color: #ccc;
+            text-decoration: underline;
+        }
+
+        .copy-right {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+    .footer-section {
+        flex-basis: 50%;
+        margin: 0 auto 20px;
+        max-width: 100%;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="njs.png" alt="Logo">
+        <a href="home"></a>
+        <nav>
+           <ul>
+      <li><a href="homepage4.html">Home</a></li>
+      <li><a href="au.html">About Us</a></li>
+      <li><a href="pblcontact.html" class="active">Contact</a></li>
+      <li class="dropdown">
+        <a href="#" >More</a>
+        <div class="dropdown-content">
+          <a href="nsi.html">Self-improvement</a>
+          <a href="recommendPBL.html">Recommend</a>
+          <a href="credit.html">Reference</a>
+        </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="picture-container">
+        <img src="stock.jpg" alt="Picture">
+        <div class="text">
+            <h1 class="homepage">Contact us</h1>
+            <p class="learnmore"><a href="#form" class="button">Learn more!</a></p>
+        </div>
+    </div>
+    <h1 class="paragraph">We are here for you</h1>
+    <p class="paragraph">If you guys have any questions, you can reach out to us anytime.</p>
+
+    <div class="form">
+        <img src="2023.png">
+        <form id="form">
+            <label for="name">Your name:</label><br>
+            <input type="text" id="name" name="name" style="width: 400px; height: 30px;"><br>
+
+            <label for="email">Your email:</label><br>
+            <input type="email" id="email" name="email" style="width: 400px; height: 30px; "><br>
+
+            <label for="msg">Message:</label><br>
+            <textarea id="msg" name="msg" style="width: 400px; height: 100px; "></textarea><br>
+
+            <input type="submit" value="submit" style="width: 400px; height: 30px;" onclick="alert(
+'we recieved your message!♡')">
+        </form>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section messaging">
+                <form action="#" method="post">
+                    <input type="text" name="message" placeholder="Your message...">
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+            <div class="footer-section navigation">
+                <ul>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="au.html">About</a></li>
+                    <li><a href="pblcontact.html">Contact</a></li>
+                     <li><a href="credit.html">Reference</a></li>
+                </ul>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/"><img src="fb.png" alt="Facebook"></a>
+                <a href="https://twitter.com/?lang=en"><img src="twitter.png" alt="Twitter"></a>
+                <a href="https://discord.com/"><img src="dis.png" alt="discord"></a>
+            </div>
+        </div>
+        <p class="copy-right">&copy; 2024 y7 helio NJS. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

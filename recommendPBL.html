@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>recommend</title>
+    <link rel="icon" type="image/png" href="njs.png">
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #f1f1f1;
+    font-family: serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px;
+}
+
+.logo {
+    width: 6%;
+    height: auto;
+}
+
+nav {
+    text-align: left;
+    margin-left: 30px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    display: inline-block;
+    font-size: 110%;
+    color: #8C9FAE;
+    padding: 16px 16px;
+}
+
+li a {
+    color: #8C9FAE;
+    text-decoration: none;
+}
+
+.active {
+    background-color: #2B2D42;
+}
+
+li a:hover:not(.active) {
+    background-color: #2B2D42;
+    text-decoration: underline;
+}
+
+li::after {
+    content: "|";
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.dropdown {
+    position: relative;
+    margin-right: 40px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #8C9FAE;
+    min-width: 160px;
+    z-index: 1;
+    left: 0;
+    top: 100%;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.picture-container {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: auto;
+}
+
+.picture-container img {
+    width: 100%;
+    height: auto;
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    width: 100%;
+}
+
+.homepage {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.learnmore a {
+    background: #2B2D42;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.learnmore a:hover {
+    opacity: 0.8;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.books {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 50px 0;
+}
+
+.book {
+    width: 30%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.book:hover {
+    transform: translateY(-10px);
+}
+
+.book img {
+    width: 100%;
+    height: 600px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.book h3 {
+    color: #2B2D42;
+    font-size: 23px;
+    margin-bottom: 10px;
+    height: 20px;
+    line-height: 0.5;
+}
+
+.book p {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 10px;
+    height: 40px;
+}
+
+.book .button {
+    background-color: #2B2D42;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    height: 20px;
+}
+
+.book .button:hover {
+    background-color: #1D1F2A;
+}
+
+.book h3 p img {
+    line-height: 2.5;
+}
+
+a {
+    text-decoration: none;
+}
+
+.col {
+    flex: 25%;
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+
+.col img {
+    width: 100%;
+    border-radius: 0;
+    align-items: center;
+}
+
+.col h3 {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.col p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.col button {
+    background-color: #f4f4f4;
+    color: #333;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.col button:hover {
+    background-color: #ddd;
+    text-decoration: underline;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.left,
+.right {
+    width: 45%;
+}
+
+.image {
+    width: 100%;
+}
+
+.right p,
+.left p {
+    font-size: 20px;
+    line-height: 2.5;
+}
+
+.left,
+.right {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .books .book {
+        width: 100%;
+    }
+
+    .col {
+        flex: 100%;
+    }
+}   
+    </style>
+    <style>
+          body {height: 100%;
+                margin: 0;
+                font-family: serif;
+
+}
+   footer {
+            width: 100%;
+            bottom: 0;
+            background-color: #333;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+                  .footer-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                align-items: flex-start;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .footer-section {
+                margin: 0 10px;
+                max-width: 300px;
+                flex: 1;
+            }
+
+            .footer-section ul {
+                list-style: none;
+                padding: 0;
+                margin-bottom: 20px;
+                display: flex;
+                justify-content: center;
+            }
+
+            .footer-section li {
+                margin: 0 10px; 
+            }
+
+                    .footer-section li {
+                        margin-bottom: 5px;
+                    }
+
+        .footer-section input[type="text"],
+        .footer-section input[type="submit"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        .social-icons {
+            margin-bottom: 20px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .social-icons img {
+            width: 30px;
+            margin-right: 10px;
+        }
+
+        .social-icons a:hover {
+            color: #ccc;
+        }
+
+        .navigation ul {
+            padding-left: 0;
+            text-align: center;
+        }
+
+        .navigation li {
+            margin-bottom: 5px;
+        }
+
+        .navigation a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .navigation a:hover {
+            color: #ccc;
+            text-decoration: underline;
+        }
+
+        .copy-right {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+    .footer-section {
+        flex-basis: 50%;
+        margin: 0 auto 20px;
+        max-width: 100%;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+  <img class="logo" src="njs.png" alt="Logo">
+  <a href="home"></a> 
+  <nav>
+    <ul>
+      <li><a href="homepage4.html">Home</a></li>
+      <li><a href="au.html">About Us</a></li>
+      <li><a href="pblcontact.html">Contact</a></li>
+      <li class="dropdown">
+        <a href="#" class="active">More</a>
+        <div class="dropdown-content">
+          <a href="nsi.html">Self-improvement</a>
+          <a href="recommendPBL.html"  class="active">Recommend</a>
+          <a href="credit.html">Reference</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<div class="picture-container">
+  <img src="mt.webp" alt="Picture" width="500">
+  <div class="text">
+    <h1 class="homepage">Recommendation</h1>
+    <p class="learnmore"><a href="#yt" class="button">Learn more!</a></p>
+  </div>
+</div>
+<!-- books -->
+ <div id="books" class="books" >
+    <div class="book">
+        <img src="book1.jpg" alt="Book 1">
+        <h3>How to Stop Worrying and Start Living</h3>
+        <p>By Dale Carnegie</p>
+        <p>This book provides practical advice on overcoming anxiety and enjoying life more.</p>
+        <a href="https://crpf.gov.in/writereaddata/images/pdf/How_To_Stop_Worrying_And_Start_Living.pdf" class="button">Read more</a>
+    </div>
+    <div class="book">
+        <img src="book2.jpg" alt="Book 2">
+        <h3>Atomic Habits</h3>
+        <p>By James Clear</p>
+        <p>This book teaches how to make small changes for significant life improvements.</p>
+        <a href="https://ztcprep.com/library/story/Atomic_Habits/Atomic_Habits_(www.ztcprep.com).pdf" class="button">Read more</a>
+    </div>
+    <div class="book">
+        <img src="book3.jpg" alt="Book 3">
+        <h3>The Subtle Art of Not Giving a F*ck</h3>
+        <p>By Mark Manson</p>
+        <p>This book encourages focusing on what truly matters in life.</p>
+        <a href="https://nibmehub.com/opac-service/pdf/read/The%20Subtle%20Art%20of%20Not%20Giving%20a%20Fck%20A%20Counterintuitive%20Approach%20to%20Living%20a%20Good%20Life%20by%20Mark%20Manson%20(z-lib.org).pdf" class="button">Read more</a>
+    </div>
+</div>
+<div class="container" id="yt">
+    <div class="left">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/KyAeX8R0cvo?si=Slw5FjhwvyjxOWHs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <div class="right">
+        <p>The video talks about how important it is to start improving yourself when you're young. It suggests creating a clear vision of what you want your life to be like. It also gives tips like being thankful, making good friends, and focusing on what you enjoy doing. and lastly it suggests finding someone to support you along the way.</p>
+        <div class="learnmore"><a href="https://youtu.be/KyAeX8R0cvo?si=v_Tnwa0pZuvitIKC">Watch</a></div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="left">
+        <p>The video is about staying motivated to exercise regularly. It says it's important to have a good reason for working out and set clear goals. It also talks about enjoying your workouts and not worrying too much about being perfect.</p>
+        <div class="learnmore"><a href="https://youtu.be/F0t0-AP7lhc?si=-BpmQcqMjuT-bMET">Watch</a></div>
+    </div>
+    <div class="right">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/F0t0-AP7lhc?si=tI1002SiKqj_i1g2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+</div>
+
+<div class="container">
+    <div class="left">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/caC919Poryg?si=vntbEnrK5NdlxxAA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <div class="right">
+        <p>The video highlights the importance of overcoming a victim mindset. To improve your life force, focus on maintaining a healthy lifestyle and practicing self-care. Additionally, combating laziness involves establishing routines, staying committed to goals and healing from past traumas. It's also essential to seek support when needed and cultivate positivity and gratitude in your life.</p>
+        <div class="learnmore"><a href="https://youtu.be/caC919Poryg?si=jXK-6BigBdKJaEc4">Watch</a></div>
+    </div>
+
+</div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section messaging">
+                <form action="#" method="post">
+                    <input type="text" name="message" placeholder="Your message...">
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+            <div class="footer-section navigation">
+                <ul>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="au.html">About</a></li>
+                    <li><a href="pblcontact.html">Contact</a></li>
+                    <li><a href="credit.html">Reference</a></li>
+                </ul>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/"><img src="fb.png" alt="Facebook"></a>
+                <a href="https://twitter.com/?lang=en"><img src="twitter.png" alt="Twitter"></a>
+                <a href="https://discord.com/"><img src="dis.png" alt="discord"></a>
+            </div>
+        </div>
+        <p class="copy-right">&copy; 2024 y7 helio NJS. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

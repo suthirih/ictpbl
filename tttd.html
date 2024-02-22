@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time-table and To-do List</title>
+    <link rel="icon" type="image/png" href="NJS.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #edf2f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        .time-table, .to-do-list, .daily-routine {
+            flex-basis: calc(50% - 20px); 
+            margin-right: 20px;
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #2B2D42;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #2B2D42;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th, table td {
+            padding: 10px;
+            border-bottom: 1px solid #2B2D42;
+        }
+
+        table th {
+            text-align: left;
+            color: #2B2D42;
+        }
+
+        input[type="date"], input[type="time"], input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #2B2D42;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #1D1F2A;
+        }
+
+        .to-do-list ul, .daily-routine ul {
+            padding: 0;
+            list-style-type: none;
+            margin-top: 10px;
+        }
+
+        .to-do-list li, .daily-routine li {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #2B2D42;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #1D1F2A;
+        }
+    </style>
+</head>
+<body>
+    <a href="nsi.html" class="back-button">Go Back</a>
+    <div class="container">
+        <div class="time-table">
+            <h2>Time-table</h2>
+            <label for="date">Date:</label>
+            <input type="date" id="date">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Activity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="time"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr class="additional-rows">
+                        <td><input type="time"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="to-do-list">
+            <h2>To-do List</h2>
+            <form>
+                <input type="date" id="todo-date">
+                <input type="text" id="todo-task" placeholder="Enter task">
+                <input type="submit" value="Add Task">
+            </form>
+            <ul id="todo-list">
+                <li>Complete assignment</li>
+                <li>Buy groceries</li>
+                <li>Call mom</li>
+            </ul>
+        </div>
+        <div class="daily-routine">
+            <h2>Daily Routine</h2>
+            <ul>
+                <li><input type="checkbox" id="healthy"> Journal</li>
+                <li><input type="checkbox" id="academic"> School work</li>
+                <li><input type="checkbox" id="academic"> Study/Homework</li>
+                <li><input type="checkbox" id="academic"> Exercise (go for a run or do yoga)</li>
+                <li><input type="checkbox" id="academic"> Screen Time Limit</li>
+                <li><input type="checkbox" id="academic"> Rest</li>
+                <li><input type="checkbox" id="academic"> Art/Book therapy</li>
+                <li><input type="checkbox" id="academic"> Eaten Healthy Meals</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

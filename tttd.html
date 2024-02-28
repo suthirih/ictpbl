@@ -72,6 +72,8 @@
             padding: 10px 20px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            text-align: center; /* Center text horizontally */
+            line-height: 40px; /* Center text vertically */
         }
 
         input[type="submit"]:hover {
@@ -104,10 +106,41 @@
         .back-button:hover {
             background-color: #1D1F2A;
         }
+
+        .saved-message {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            display: none;
+        }
+
+        .save-button {
+            padding: 10px 20px;
+            background-color: #2B2D42;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 20px;
+            text-align: center; /* Center text horizontally */
+            line-height: 40px; /* Center text vertically */
+        }
+
+        .save-button:hover {
+            background-color: #1D1F2A;
+        }
     </style>
 </head>
 <body>
     <a href="nsi.html" class="back-button">Go Back</a>
+    <div class="saved-message" id="savedMessage">Your Changes Are Saved ♡</div>
     <div class="container">
         <div class="time-table">
             <h2>Time-table</h2>
@@ -134,10 +167,10 @@
         </div>
         <div class="to-do-list">
             <h2>To-do List</h2>
-            <form>
+            <form id="todo-form">
                 <input type="date" id="todo-date">
                 <input type="text" id="todo-task" placeholder="Enter task">
-                <input type="submit" value="Add Task">
+                <input type="button" value="Add Task">
             </form>
             <ul id="todo-list">
                 <li>Complete assignment</li>
@@ -147,7 +180,7 @@
         </div>
         <div class="daily-routine">
             <h2>Daily Routine</h2>
-            <ul>
+            <ul id="routine-list">
                 <li><input type="checkbox" id="healthy"> Journal</li>
                 <li><input type="checkbox" id="academic"> School work</li>
                 <li><input type="checkbox" id="academic"> Study/Homework</li>
@@ -159,5 +192,6 @@
             </ul>
         </div>
     </div>
+    <div class="save-button" onclick="alert('Your records are saved!♡')">Save</div>
 </body>
 </html>
